@@ -9,7 +9,7 @@ import MySQLdb
 ui, _ = loadUiType('MainAdmin.ui')
 login,_ = loadUiType('Login.ui')
 FirstPage,_ = loadUiType('FirstPage.ui')
-
+StudentMain,_ = loadUiType('StudentMain')
 
 class PageInitial(QWidget , FirstPage):
     def __init__(self):
@@ -58,7 +58,7 @@ class Login(QWidget , login):
                 self.label.setText('Make Sure You Enterd Your Username And Password Correctly')
     
 
-class MainApp(QWidget, ui):
+class MainApp(QWidget, StudentMain):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
@@ -75,6 +75,14 @@ class MainApp(QWidget, ui):
         self.pushButton_3.clicked.connect(self.Resultats_des_etudients)
         self.pushButton_5.clicked.connect(self.Laureats_de_Geoinformation)
         self.pushButton_6.clicked.connect(self.Add_First_semester)
+
+
+class StudentMain(QWidget, ui):
+    def __init__(self):
+        QWidget.__init__(self)
+        self.setupUi(self)
+        self.Handel_UI_Changes()
+        self.Handel_Buttons()
 
         
         
