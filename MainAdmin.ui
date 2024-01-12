@@ -80,7 +80,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -161,7 +161,7 @@
       </font>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tab_13">
       <attribute name="title">
@@ -1252,6 +1252,319 @@
     <attribute name="title">
      <string>Page</string>
     </attribute>
+    <widget class="QTabWidget" name="tabWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>651</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>4</number>
+     </property>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>S1</string>
+      </attribute>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>641</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>CNE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Prenom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Algorithmique et programmation</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Analyse numérique</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>TS / BPT </string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>LC</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>SI Reseau</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Statistique/Analyse des données</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_8">
+      <attribute name="title">
+       <string>S2</string>
+      </attribute>
+      <widget class="QTableWidget" name="tableWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>641</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>CNE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Prenom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Cartographie numérique et DAO</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Programmation et modélisation Objet</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Information géographique</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Géométrie analytique et algorithmique</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Anglais 1</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Optimisation et analyse de systèmes </string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_9">
+      <attribute name="title">
+       <string>S3</string>
+      </attribute>
+      <widget class="QTableWidget" name="tableWidget_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>641</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>CNE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Prenom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Topographie</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Bases de données  spatiales</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Communication professionnelle</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Méthode d’analyse spatiales</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Systèmes d’information géographique</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Géodésie/Localisation par satellite</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_10">
+      <attribute name="title">
+       <string>S4</string>
+      </attribute>
+      <widget class="QTableWidget" name="tableWidget_8">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>641</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>CNE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Prenom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Télédétection Radar/Lidar</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Télédétection et traitement d’images</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Photogrammétrie</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Programmation pour les SIG</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Anglais 2</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Wabemapping &amp; Développement mobile</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>S5</string>
+      </attribute>
+      <widget class="QTableWidget" name="tableWidget_9">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>641</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>CNE</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Prenom</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Gestion del’entreprise &amp; des ressources</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Gestion de l’environnement et du territoire</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>SIG et prise de décision</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Gestion et management de projet</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Gestion des réseaux</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Administration des données spatiales</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
@@ -1283,6 +1596,19 @@
    </property>
    <property name="text">
     <string>Lauréats de Geoinformation</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_11">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>490</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Se déconnecter</string>
    </property>
   </widget>
  </widget>
