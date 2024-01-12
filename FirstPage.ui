@@ -30,6 +30,10 @@
    <property name="text">
     <string>Administrateur</string>
    </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/WhatsApp Image 2024-01-12 at 03.34.50_c19a35ce.jpg</normaloff>icons/WhatsApp Image 2024-01-12 at 03.34.50_c19a35ce.jpg</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
@@ -45,8 +49,24 @@
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(85, 255, 255);</string>
+   </property>
    <property name="text">
     <string>Etudiant</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/Student.png</normaloff>icons/Student.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>120</width>
+     <height>120</height>
+    </size>
    </property>
   </widget>
  </widget>
