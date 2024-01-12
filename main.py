@@ -10,24 +10,38 @@ ui, _ = loadUiType('MainAdmin.ui')
 login,_ = loadUiType('Login.ui')
 FirstPage,_ = loadUiType('FirstPage.ui')
 studentLogin,_ =loadUiType('StudentLogin.ui')
+inscription,_ = loadUiType('Inscription.ui')
+studentmain, _=loadUiType('StudentMain.ui')
 
 
+
+class PageInscription(QWidget, inscription): 
+    
+    def __init__(self):
+        QWidget.__init__(self)
+        self.setupUi(self)
+
+class Student_Main(QWidget, studentmain): 
+    def __init__(self):
+        QWidget.__init__(self)
+        self.setupUi(self)
+    
 class PageInitial(QWidget , FirstPage):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.Handle_InitialPage)
-        self.pushButton_2.clicked.connect(self.Handle_StudentLogin)
+        self.pushButton.clicked.connect(self.Handel_InitialPage)
+        self.pushButton_2.clicked.connect(self.Handel_StudentLogin)
 
         
-    def Handle_InitialPage(self) : 
+    def Handel_InitialPage(self) : 
         
         self.window2= Login()
         self.close()
         self.window2.show()
         
         
-    def Handle_StudentLogin(self):
+    def Handel_StudentLogin(self):
         
         self.window2= StudentLogin()
         self.close()
@@ -37,7 +51,38 @@ class  StudentLogin(QWidget, studentLogin):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
+        self.pushButton.clicked.connect(self.Handel_student_Login)
+        self.pushButton_2.clicked.connect(self.Handel_Inscription)
+
         
+        
+        
+        
+    def Handel_student_Login(self):
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='jenousJe@123' , db='apogee')
+        #La création de l'objet cursor pour interagir avec la bdd, pour exécuter des requêtes SQL
+        self.cur = self.db.cursor()
+
+        CNE = self.lineEdit.text()
+        datenaisetu = self.lineEdit_2.text()
+
+        sql = ''' SELECT * FROM etudiant '''
+
+        self.cur.execute(sql)
+        data = self.cur.fetchall()
+        for row in data  :
+            if CNE == str(row[0]) and datenaisetu == str(row[7]):
+                self.window2= Student_Main()
+                self.close()
+                self.window2.show()
+
+            else:
+                self.label.setText('Make Sure You Enterd Your Username And Password Correctly')
+                
+    def Handel_Inscription(self): 
+         self.window2= PageInscription()
+         self.close()
+         self.window2.show()        
 
 class Login(QWidget , login):
     def __init__(self):
