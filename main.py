@@ -20,11 +20,20 @@ class PageInscription(QWidget, inscription):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
+        self.pushButton_2.clicked.connect(self.Handel_Student_Login)
+        
+        
+    def Handel_Student_Login(self):
+        
+        self.window2= StudentLogin()
+        self.close()
+        self.window2.show()    
 
 class Student_Main(QWidget, studentmain): 
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
+        
     
 class PageInitial(QWidget , FirstPage):
     def __init__(self):
@@ -53,6 +62,12 @@ class  StudentLogin(QWidget, studentLogin):
         self.setupUi(self)
         self.pushButton.clicked.connect(self.Handel_student_Login)
         self.pushButton_2.clicked.connect(self.Handel_Inscription)
+        self.pushButton_3.clicked.connect(self.Handel_Goback_InitialPage)
+        
+        
+    
+        
+
 
         
         
@@ -82,7 +97,12 @@ class  StudentLogin(QWidget, studentLogin):
     def Handel_Inscription(self): 
          self.window2= PageInscription()
          self.close()
-         self.window2.show()        
+         self.window2.show() 
+         
+    def Handel_Goback_InitialPage(self): 
+        self.window2=PageInitial()
+        self.close()
+        self.window2.show()        
 
 class Login(QWidget , login):
     def __init__(self):
@@ -133,6 +153,7 @@ class MainApp(QWidget, ui):
         self.pushButton_3.clicked.connect(self.Resultats_des_etudients)
         self.pushButton_5.clicked.connect(self.Laureats_de_Geoinformation)
         self.pushButton_6.clicked.connect(self.Add_First_semester)
+        self.pushButton_11.clicked.connect(self.Go_Back_LoginAdmin)
 
         
         
@@ -159,7 +180,7 @@ class MainApp(QWidget, ui):
         
         
     def Laureats_de_Geoinformation(self):
-        self.tabWidget.setCurrentIndex(3)  
+        self.tabWidget.setCurrentIndex(4)  
         
         
         
@@ -190,7 +211,6 @@ class MainApp(QWidget, ui):
         ''' ,( Algo , AN , TS_BPT  , LC, SI, Stat_ADD, CNE ))
 
         self.db.commit()
-        print('done')
 
         self.lineEdit_9.setText('')
         self.lineEdit.setText('')
@@ -200,7 +220,14 @@ class MainApp(QWidget, ui):
         self.lineEdit_7.setText('')  
         self.lineEdit_8.setText('')  
 
-        
+    def Go_Back_LoginAdmin(self):
+        warning = QMessageBox.warning(self , 'se déconnecter' , "T'es sure? " , QMessageBox.Oui | QMessageBox.Non)
+        if warning == QMessageBox.Oui :
+            
+
+           self.window2= Login()
+           self.close()
+           self.window2.show() 
         
         
 def main():
