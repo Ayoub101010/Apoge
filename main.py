@@ -9,13 +9,16 @@ import MySQLdb
 ui, _ = loadUiType('MainAdmin.ui')
 login,_ = loadUiType('Login.ui')
 FirstPage,_ = loadUiType('FirstPage.ui')
-StudentMain,_ = loadUiType('StudentMain')
+studentLogin,_ =loadUiType('StudentLogin.ui')
+
 
 class PageInitial(QWidget , FirstPage):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
         self.pushButton.clicked.connect(self.Handle_InitialPage)
+        self.pushButton_2.clicked.connect(self.Handle_StudentLogin)
+
         
     def Handle_InitialPage(self) : 
         
@@ -23,7 +26,17 @@ class PageInitial(QWidget , FirstPage):
         self.close()
         self.window2.show()
         
-    
+        
+    def Handle_StudentLogin(self):
+        
+        self.window2= StudentLogin()
+        self.close()
+        self.window2.show()
+        
+class  StudentLogin(QWidget, studentLogin): 
+    def __init__(self):
+        QWidget.__init__(self)
+        self.setupUi(self)
         
 
 class Login(QWidget , login):
@@ -58,7 +71,7 @@ class Login(QWidget , login):
                 self.label.setText('Make Sure You Enterd Your Username And Password Correctly')
     
 
-class MainApp(QWidget, StudentMain):
+class MainApp(QWidget, ui):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
@@ -75,14 +88,6 @@ class MainApp(QWidget, StudentMain):
         self.pushButton_3.clicked.connect(self.Resultats_des_etudients)
         self.pushButton_5.clicked.connect(self.Laureats_de_Geoinformation)
         self.pushButton_6.clicked.connect(self.Add_First_semester)
-
-
-class StudentMain(QWidget, ui):
-    def __init__(self):
-        QWidget.__init__(self)
-        self.setupUi(self)
-        self.Handel_UI_Changes()
-        self.Handel_Buttons()
 
         
         
