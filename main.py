@@ -33,7 +33,16 @@ class Student_Main(QWidget, studentmain):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
-        
+        self.pushButton.clicked.connect(self.Handel_deconnect_student)
+
+    def Handel_deconnect_student(self):
+        warning = QMessageBox.warning(self , 'se déconnecter' , "T'es sure? " , QMessageBox.Yes | QMessageBox.No)
+        if warning == QMessageBox.Yes :
+            
+
+           self.window2=StudentLogin()
+           self.close()
+           self.window2.show()   
     
 class PageInitial(QWidget , FirstPage):
     def __init__(self):
@@ -142,6 +151,7 @@ class MainApp(QWidget, ui):
         self.setupUi(self)
         self.Handel_UI_Changes()
         self.Handel_Buttons()
+        self.Show_All_Results()
 
 
         
@@ -157,7 +167,7 @@ class MainApp(QWidget, ui):
 
         
         
-        
+    """ Hide Tabs """  
             
     def Handel_UI_Changes(self):
         self.tabWidget.tabBar().setVisible(False)
@@ -219,6 +229,8 @@ class MainApp(QWidget, ui):
         self.lineEdit_6.setText('')  
         self.lineEdit_7.setText('')  
         self.lineEdit_8.setText('')  
+        
+        self.Show_All_Results()
 
     def Go_Back_LoginAdmin(self):
         warning = QMessageBox.warning(self , 'se déconnecter' , "T'es sure? " , QMessageBox.Yes | QMessageBox.No)
@@ -228,6 +240,30 @@ class MainApp(QWidget, ui):
            self.window2= Login()
            self.close()
            self.window2.show() 
+    '''------List the results-----'''
+    
+           
+    def Show_All_Results(self):
+        self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT semestre1.CNE, etudiant.nometu, etudiant.prenometu, semestre1.Algo, semestre1.AN, semestre1.TS_BPT, semestre1.LC,semestre1.SI, semestre1.Stat_ADD FROM semestre1 INNER JOIN etudiant ON etudiant.CNE = semestre1.CNE ''')
+        data = self.cur.fetchall()
+        print(data)
+        self.tabWidget_4.setCurrentIndex(0)  
+
+        self.tableWidget.setRowCount(0)
+        self.tableWidget.insertRow(0)
+
+        for row, form in enumerate(data ) :
+            for column, item in enumerate(form):
+                self.tableWidget.setItem(row, column, QTableWidgetItem(str(item)))
+                column += 1
+
+            row_position = self.tableWidget.rowCount()
+            self.tableWidget.insertRow(row_position)
+
+        self.db.close()   
         
         
 def main():

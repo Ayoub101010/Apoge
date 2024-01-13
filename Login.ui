@@ -18,7 +18,7 @@
     <rect>
      <x>179</x>
      <y>120</y>
-     <width>371</width>
+     <width>411</width>
      <height>501</height>
     </rect>
    </property>
@@ -26,7 +26,7 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
+    <string notr="true">background-color: rgb(85, 170, 255);</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -91,8 +91,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>350</y>
+      <x>110</x>
+      <y>390</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -104,24 +104,6 @@
     </property>
     <property name="text">
      <string>Se connecter</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>430</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>S'inscrire</string>
     </property>
    </widget>
   </widget>
