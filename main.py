@@ -151,7 +151,7 @@ class MainApp(QWidget, ui):
         self.setupUi(self)
         self.Handel_UI_Changes()
         self.Handel_Buttons()
-        self.Show_All_Results()
+        self.Show_All_Results_S1()
 
 
         
@@ -230,7 +230,7 @@ class MainApp(QWidget, ui):
         self.lineEdit_7.setText('')  
         self.lineEdit_8.setText('')  
         
-        self.Show_All_Results()
+        self.Show_All_Results_S1()
 
     def Go_Back_LoginAdmin(self):
         warning = QMessageBox.warning(self , 'se déconnecter' , "T'es sure? " , QMessageBox.Yes | QMessageBox.No)
@@ -243,7 +243,7 @@ class MainApp(QWidget, ui):
     '''------List the results-----'''
     
            
-    def Show_All_Results(self):
+    def Show_All_Results_S1(self):
         self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
         self.cur = self.db.cursor()
 
