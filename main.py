@@ -221,8 +221,8 @@ class MainApp(QWidget, ui):
         self.lineEdit_8.setText('')  
 
     def Go_Back_LoginAdmin(self):
-        warning = QMessageBox.warning(self , 'se déconnecter' , "T'es sure? " , QMessageBox.Oui | QMessageBox.Non)
-        if warning == QMessageBox.Oui :
+        warning = QMessageBox.warning(self , 'se déconnecter' , "T'es sure? " , QMessageBox.Yes | QMessageBox.No)
+        if warning == QMessageBox.Yes :
             
 
            self.window2= Login()
