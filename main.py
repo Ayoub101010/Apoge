@@ -4,6 +4,9 @@ from PyQt5.QtWidgets import *
 import sys
 from PyQt5.uic import loadUiType
 import MySQLdb
+from PyQt5.QtCore import QDate
+
+
 
 
 ui, _ = loadUiType('MainAdmin.ui')
@@ -20,6 +23,7 @@ class PageInscription(QWidget, inscription):
     def __init__(self):
         QWidget.__init__(self)
         self.setupUi(self)
+        self.pushButton.clicked.connect(self.Inscription)
         self.pushButton_2.clicked.connect(self.Handel_Student_Login)
         
         
@@ -27,7 +31,59 @@ class PageInscription(QWidget, inscription):
         
         self.window2= StudentLogin()
         self.close()
-        self.window2.show()    
+        self.window2.show()  
+        
+    def Inscription(self):
+        
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='jenousJe@123' , db='apogee')
+        self.cur = self.db.cursor()
+        
+        CNE_t = self.lineEdit_14.text()
+        nometu_t = self.lineEdit_13.text()
+        prenometu_t = self.lineEdit_12.text()
+        CIN_t = self.lineEdit_11.text()
+        Emailetu_t = self.lineEdit_15.text()
+        adretu_t = self.lineEdit_9.text()
+        telephoneetu_t = self.lineEdit_10.text()
+        datenaisetu_a= self.dateEdit.date()
+        datenaisetu_t = datenaisetu_a.toString("yyyy-MM-dd")
+
+        
+        Annee = self.lineEdit_16.text()
+        Sexe = None
+
+        if self.checkBox.isChecked():
+            Sexe = "Homme"
+        elif self.checkBox_2.isChecked():
+            Sexe = "Femme"
+
+        
+
+
+        
+        
+        self.cur.execute('''
+            INSERT INTO inscription(CNE_t,nometu_t,prenometu_t,CIN_t,Emailetu_t, adretu_t,telephoneetu_t,datenaisetu_t, Sexe, Annee  )
+            VALUES (%s , %s , %s , %s  , %s, %s, %s, %s, %s, %s)
+        ''' ,( CNE_t , nometu_t , prenometu_t  , CIN_t, Emailetu_t, adretu_t, telephoneetu_t, datenaisetu_t, Sexe, Annee ))
+
+        self.db.commit()
+
+        self.lineEdit_14.setText('')
+        self.lineEdit_13.setText('')
+        self.lineEdit_12.setText('')
+        self.lineEdit_11.setText('')
+        self.lineEdit_15.setText('')  
+        self.lineEdit_9.setText('')  
+        self.lineEdit_10.setText('')
+        self.dateEdit.setDate(QDate())
+        
+        self.lineEdit_16.text() 
+        if self.checkBox.isChecked():
+            self.checkBox.setChecked(False)
+        elif self.checkBox_2.isChecked():
+            self.checkBox_2.setChecked(False)  
+        self.lineEdit_16.settext()
 
 class Student_Main(QWidget, studentmain): 
     def __init__(self):
@@ -118,6 +174,8 @@ class Login(QWidget , login):
         QWidget.__init__(self)
         self.setupUi(self)
         self.pushButton.clicked.connect(self.Handel_Login)
+        self.pushButton_2.clicked.connect(self.Handel_Goback_InitialPage)
+
         
         
     
@@ -143,7 +201,10 @@ class Login(QWidget , login):
 
             else:
                 self.label.setText('Make Sure You Enterd Your Username And Password Correctly')
-    
+    def Handel_Goback_InitialPage(self): 
+        self.window2=PageInitial()
+        self.close()
+        self.window2.show() 
 
 class MainApp(QWidget, ui):
     def __init__(self):
@@ -152,6 +213,8 @@ class MainApp(QWidget, ui):
         self.Handel_UI_Changes()
         self.Handel_Buttons()
         self.Show_All_Results_S1()
+        self.Show_All_Results_S2()
+        self.show_Inscriptions()
 
 
         
@@ -162,7 +225,9 @@ class MainApp(QWidget, ui):
         self.pushButton_2.clicked.connect(self.Liste_des_etudients)
         self.pushButton_3.clicked.connect(self.Resultats_des_etudients)
         self.pushButton_5.clicked.connect(self.Laureats_de_Geoinformation)
-        self.pushButton_6.clicked.connect(self.Add_First_semester)
+        self.pushButton_6.clicked.connect(self. Add_First_semester)
+        self.pushButton_7.clicked.connect(self.Add_Second_semester)
+
         self.pushButton_11.clicked.connect(self.Go_Back_LoginAdmin)
 
         
@@ -231,6 +296,40 @@ class MainApp(QWidget, ui):
         self.lineEdit_8.setText('')  
         
         self.Show_All_Results_S1()
+        
+        
+    def Add_Second_semester(self):
+        
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='jenousJe@123' , db='apogee')
+        self.cur = self.db.cursor()
+        
+        CNE = self.lineEdit_12.text()
+        CN_DAO = self.lineEdit_2.text()
+        Prog_MO= self.lineEdit_13.text()
+        IG = self.lineEdit_11.text()
+        GAA = self.lineEdit_14.text()
+        Anglais = self.lineEdit_15.text()
+        OAS = self.lineEdit_10.text()
+
+
+        
+        
+        self.cur.execute('''
+            INSERT INTO semestre2(CN_DAO,Prog_MO,IG,GAA,Anglais, OAS,CNE )
+            VALUES (%s , %s , %s , %s  , %s, %s, %s)
+        ''' ,( CN_DAO , Prog_MO , IG  , GAA, Anglais, OAS, CNE ))
+
+        self.db.commit()
+
+        self.lineEdit_12.setText('')
+        self.lineEdit_2.setText('')
+        self.lineEdit_13.setText('')
+        self.lineEdit_11.setText('')
+        self.lineEdit_14.setText('')  
+        self.lineEdit_15.setText('')  
+        self.lineEdit_10.setText('')  
+        
+        self.Show_All_Results_S2()    
 
     def Go_Back_LoginAdmin(self):
         warning = QMessageBox.warning(self , 'se déconnecter' , "T'es sure? " , QMessageBox.Yes | QMessageBox.No)
@@ -264,6 +363,49 @@ class MainApp(QWidget, ui):
             self.tableWidget.insertRow(row_position)
 
         self.db.close()   
+        
+    def Show_All_Results_S2(self):
+        self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT semestre2.CNE, etudiant.nometu, etudiant.prenometu, semestre2.CN_DAO, semestre2.Prog_MO, semestre2.IG, semestre2.GAA,semestre2.Anglais, semestre2.OAS FROM semestre2 INNER JOIN etudiant ON etudiant.CNE = semestre2.CNE ''')
+        data = self.cur.fetchall()
+        print(data)
+        self.tabWidget_4.setCurrentIndex(1)  
+
+        self.tableWidget_6.setRowCount(0)
+        self.tableWidget_6.insertRow(0)
+
+        for row, form in enumerate(data ) :
+            for column, item in enumerate(form):
+                self.tableWidget_6.setItem(row, column, QTableWidgetItem(str(item)))
+                column += 1
+
+            row_position = self.tableWidget_6.rowCount()
+            self.tableWidget_6.insertRow(row_position)
+
+        self.db.close() 
+        
+    def show_Inscriptions(self):
+        self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT CNE_t, nometu_t, prenometu_t, CIN_t, Emailetu_t, adretu_t, telephoneetu_t, datenaisetu_t, Sexe, Annee FROM inscription ''')
+        data = self.cur.fetchall()
+        print(data)
+
+        self.tableWidget_2.setRowCount(0)
+        self.tableWidget_2.insertRow(0)
+
+        for row, form in enumerate(data ) :
+            for column, item in enumerate(form):
+                self.tableWidget_2.setItem(row, column, QTableWidgetItem(str(item)))
+                column += 1
+
+            row_position = self.tableWidget_2.rowCount()
+            self.tableWidget_2.insertRow(row_position)
+
+        self.db.close()
         
         
 def main():
