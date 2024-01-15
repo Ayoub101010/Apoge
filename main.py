@@ -138,8 +138,8 @@ class  StudentLogin(QWidget, studentLogin):
         
         
         
-    def Handel_student_Login(self):
-        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='Adnan@benaboud123' , db='apogee')
+    """def Handel_student_Login(self):
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='jenousJe@123' , db='apogee')
         #La création de l'objet cursor pour interagir avec la bdd, pour exécuter des requêtes SQL
         self.cur = self.db.cursor()
 
@@ -147,7 +147,7 @@ class  StudentLogin(QWidget, studentLogin):
         datenaisetu = self.lineEdit_2.text()
 
         sql = ''' SELECT * FROM etudiant '''
-
+    
         self.cur.execute(sql)
         data = self.cur.fetchall()
         for row in data  :
@@ -158,7 +158,55 @@ class  StudentLogin(QWidget, studentLogin):
 
             else:
                 self.label.setText('Make Sure You Enterd Your Username And Password Correctly')
+        
+    """
+    def Handel_student_Login(self):
+        self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
+        self.cur = self.db.cursor()
+
+        CNE_etu = self.lineEdit.text()
+        datenaisetu = self.lineEdit_2.text()
+    
+    # Selecting all students, assuming you want to check if a student exists
+        sql = f"SELECT * FROM etudiant WHERE CNE = '{CNE_etu}' AND datenaisetu = '{datenaisetu}'"
+        self.cur.execute(sql)
+        student_data = self.cur.fetchone()
+
+        if student_data:
+        # The student exists, now fetch semester data
+           self.cur.execute(f"SELECT Algo, AN, TS_BPT, LC, SI, Stat_ADD FROM semestre1 WHERE CNE = '{CNE_etu}'")
+           semester_data = self.cur.fetchone()
+
+           if semester_data:
+            # The semester data exists, update the labels
+            self.tabWidget.setCurrentIndex(0)
+            self.label_69.setText(str(semester_data[0]))
+            self.label_75.setText(str(semester_data[1]))
+            self.label_76.setText(str(semester_data[2]))
+            self.label_81.setText(str(semester_data[3]))
+            self.label_86.setText(str(semester_data[4]))
+            self.label_87.setText(str(semester_data[5]))
+            moyenne = (semester_data[0] + semester_data[1] + semester_data[2] + semester_data[3]+ semester_data[4] + semester_data[5]) / 6 
+            self.label_74.setText(str(moyenne))
+
+           else:
+            print("No semester data found for the student.")
+        else:
+          print("Student not found.")
+    
+        self.db.close()
+
+                   
+
+
+                   
+
                 
+
+            
+
+        
+           
     def Handel_Inscription(self): 
          self.window2= PageInscription()
          self.close()

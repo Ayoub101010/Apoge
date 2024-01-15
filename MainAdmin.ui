@@ -80,7 +80,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -100,11 +100,6 @@
      </attribute>
      <column>
       <property name="text">
-       <string>CIN</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
        <string>CNE</string>
       </property>
      </column>
@@ -120,7 +115,17 @@
      </column>
      <column>
       <property name="text">
+       <string>CIN</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Email</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Adresse</string>
       </property>
      </column>
      <column>
@@ -1334,7 +1339,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_6">
       <attribute name="title">
