@@ -175,20 +175,87 @@ class  StudentLogin(QWidget, studentLogin):
         if student_data:
         # The student exists, now fetch semester data
            self.cur.execute(f"SELECT Algo, AN, TS_BPT, LC, SI, Stat_ADD FROM semestre1 WHERE CNE = '{CNE_etu}'")
-           semester_data = self.cur.fetchone()
+           semester_data1 = self.cur.fetchone()
 
-           if semester_data:
+           self.cur.execute(f"SELECT CN_DAO, Prog_MO, IG, GAA, Anglais, OAS FROM semestre1 WHERE CNE = '{CNE_etu}'")
+           semester_data2 = self.cur.fetchone()
+
+           self.cur.execute(f"SELECT Topographie, BDS, CP, MAS, SIG, G_LS FROM semestre1 WHERE CNE = '{CNE_etu}'")
+           semester_data3 = self.cur.fetchone()
+
+           self.cur.execute(f"SELECT TRL, TTI, PHOTOGRA,PROG_SIG, Anglais2, WBM FROM semestre1 WHERE CNE = '{CNE_etu}'")
+           semester_data4 = self.cur.fetchone()
+
+           self.cur.execute(f"SELECT GES, GET, SIG_PD, GMP, GR, ADS FROM semestre1 WHERE CNE = '{CNE_etu}'")
+           semester_data5 = self.cur.fetchone()
+
+           if semester_data1:
             # The semester data exists, update the labels
             self.tabWidget.setCurrentIndex(0)
-            self.label_69.setText(str(semester_data[0]))
-            self.label_75.setText(str(semester_data[1]))
-            self.label_76.setText(str(semester_data[2]))
-            self.label_81.setText(str(semester_data[3]))
-            self.label_86.setText(str(semester_data[4]))
-            self.label_87.setText(str(semester_data[5]))
-            moyenne = (semester_data[0] + semester_data[1] + semester_data[2] + semester_data[3]+ semester_data[4] + semester_data[5]) / 6 
+            self.label_69.setText(str(semester_data1[0]))
+            self.label_75.setText(str(semester_data1[1]))
+            self.label_76.setText(str(semester_data1[2]))
+            self.label_81.setText(str(semester_data1[3]))
+            self.label_86.setText(str(semester_data1[4]))
+            self.label_87.setText(str(semester_data1[5]))
+            moyenne = (semester_data1[0] + semester_data1[1] + semester_data1[2] + semester_data1[3]+ semester_data1[4] + semester_data1[5]) / 6 
             self.label_74.setText(str(moyenne))
 
+
+            if semester_data2:
+                # The semester data exists, update the labels
+                self.tabWidget.setCurrentIndex(0)
+                self.label_94.setText(str(semester_data2[0]))
+                self.label_97.setText(str(semester_data2[1]))
+                self.label_99.setText(str(semester_data2[2]))
+                self.label_109.setText(str(semester_data2[3]))
+                self.label_98.setText(str(semester_data2[4]))
+                self.label_101.setText(str(semester_data2[5]))
+                moyenne = (semester_data2[0] + semester_data2[1] + semester_data2[2] + semester_data2[3]+ semester_data2[4] + semester_data2[5]) / 6 
+                self.label_96.setText(str(moyenne))
+
+
+            if semester_data3:
+                # The semester data exists, update the labels
+                self.tabWidget.setCurrentIndex(0)
+                self.label_108.setText(str(semester_data3[0]))
+                self.label_111.setText(str(semester_data3[1]))
+                self.label_112.setText(str(semester_data3[2]))
+                self.label_113.setText(str(semester_data3[3]))
+                self.label_114.setText(str(semester_data3[4]))
+                self.label_115.setText(str(semester_data3[5]))
+                moyenne = (semester_data3[0] + semester_data3[1] + semester_data3[2] + semester_data3[3]+ semester_data3[4] + semester_data3[5]) / 6 
+                self.label_110.setText(str(moyenne))
+
+
+            if semester_data4:
+                # The semester data exists, update the labels
+                self.tabWidget.setCurrentIndex(0)
+                self.label_122.setText(str(semester_data4[0]))
+                self.label_123.setText(str(semester_data4[1]))
+                self.label_124.setText(str(semester_data4[2]))
+                self.label_125.setText(str(semester_data4[3]))
+                self.label_126.setText(str(semester_data4[4]))
+                self.label_127.setText(str(semester_data4[5]))
+                moyenne = (semester_data4[0] + semester_data4[1] + semester_data4[2] + semester_data4[3]+ semester_data4[4] + semester_data4[5]) / 6 
+                self.label_129.setText(str(moyenne))
+
+
+
+            if semester_data5:
+                # The semester data exists, update the labels
+                self.tabWidget.setCurrentIndex(0)
+                self.label_136.setText(str(semester_data5[0]))
+                self.label_139.setText(str(semester_data5[1]))
+                self.label_140.setText(str(semester_data5[2]))
+                self.label_141.setText(str(semester_data5[3]))
+                self.label_142.setText(str(semester_data5[4]))
+                self.label_143.setText(str(semester_data5[5]))
+                moyenne = (semester_data5[0] + semester_data5[1] + semester_data5[2] + semester_data5[3]+ semester_data5[4] + semester_data5[5]) / 6 
+                self.label_138.setText(str(moyenne))
+
+
+            
            else:
             print("No semester data found for the student.")
         else:
