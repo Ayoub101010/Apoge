@@ -8,6 +8,7 @@ from PyQt5.QtCore import QDate
 
 
 
+
 ui, _ = loadUiType('MainAdmin.ui')
 login,_ = loadUiType('Login.ui')
 FirstPage,_ = loadUiType('FirstPage.ui')
@@ -213,6 +214,7 @@ class MainApp(QWidget, ui):
         self.Handel_Buttons()
         self.Show_All_Results_S1()
         self.Show_All_Results_S2()
+        self.show_Inscriptions()
 
 
         
@@ -383,6 +385,27 @@ class MainApp(QWidget, ui):
             self.tableWidget_6.insertRow(row_position)
 
         self.db.close() 
+        
+    def show_Inscriptions(self):
+        self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT CNE_t, nometu_t, prenometu_t, CIN_t, Emailetu_t, adretu_t, telephoneetu_t, datenaisetu_t, Sexe, Annee FROM inscription ''')
+        data = self.cur.fetchall()
+        print(data)
+
+        self.tableWidget_2.setRowCount(0)
+        self.tableWidget_2.insertRow(0)
+
+        for row, form in enumerate(data ) :
+            for column, item in enumerate(form):
+                self.tableWidget_2.setItem(row, column, QTableWidgetItem(str(item)))
+                column += 1
+
+            row_position = self.tableWidget_2.rowCount()
+            self.tableWidget_2.insertRow(row_position)
+
+        self.db.close()
         
         
 def main():
