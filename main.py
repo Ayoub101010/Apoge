@@ -83,7 +83,7 @@ class  StudentLogin(QWidget, studentLogin):
         
         
     def Handel_student_Login(self):
-        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='jenousJe@123' , db='apogee')
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='Adnan@benaboud123' , db='apogee')
         #La création de l'objet cursor pour interagir avec la bdd, pour exécuter des requêtes SQL
         self.cur = self.db.cursor()
 
