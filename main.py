@@ -249,8 +249,9 @@ class  StudentLogin(QWidget, studentLogin):
 
             else:
              print("No semester data found for the student.")
+
         else:
-          print("Student not found.")
+         print("Student not found.")
     
         self.db.close()
 

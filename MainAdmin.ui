@@ -34,40 +34,85 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>200</y>
-     <width>191</width>
+     <width>231</width>
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Ajouter resultats</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/Add.png</normaloff>icons/Add.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>300</y>
-     <width>191</width>
+     <width>231</width>
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Liste des étudients</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/List.png</normaloff>icons/List.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>420</y>
-     <width>191</width>
+     <width>231</width>
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Résultats des étudients</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/Resultat.png</normaloff>icons/Resultat.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
    </property>
   </widget>
   <widget class="QTabWidget" name="tabWidget">
@@ -1693,38 +1738,77 @@
     <rect>
      <x>30</x>
      <y>90</y>
-     <width>191</width>
+     <width>221</width>
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Confirmer inscriptions</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/Confirm.png</normaloff>icons/Confirm.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>530</y>
-     <width>191</width>
+     <width>231</width>
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>Lauréats de Geoinformation</string>
+    <string>Lauréats </string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/Graduation.png</normaloff>icons/Graduation.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>35</width>
+     <height>35</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_11">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>650</y>
-     <width>191</width>
+     <width>231</width>
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Se déconnecter</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>icons/Logout.png</normaloff>icons/Logout.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
    </property>
   </widget>
  </widget>
