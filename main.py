@@ -229,7 +229,7 @@ class  StudentLogin(QWidget, studentLogin):
             self.label_100.setText(str(semester_data2[3]))
             self.label_98.setText(str(semester_data2[4]))
             self.label_101.setText(str(semester_data2[5]))
-            moyenne = (semester_data2[0] + semester_data2[1] + semester_data2[2] + semester_data2[3]+ semester_data2[4] + semester_data2[5]) / 6 
+            moyenne = (float(semester_data2[0]) + float(semester_data2[1]) + float(semester_data2[2]) + float(semester_data2[3])+ float(semester_data2[4]) + float(semester_data2[5])) / 6 
             self.label_96.setText(str(moyenne))
 
 
@@ -238,7 +238,7 @@ class  StudentLogin(QWidget, studentLogin):
         self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
         self.cur = self.db.cursor()
         
-        self.cur.execute(f"SELECT Topographie, BDS, CP, MAS, SIG, G_LS FROM semestre1 FROM semestre3 WHERE CNE = '{CNE_f}'")
+        self.cur.execute(f"SELECT Topographie, BDS, CP, MAS, SIG, G_LS FROM semestre3 WHERE CNE = '{CNE_f}'")
         semester_data3 = self.cur.fetchone()
 
         if semester_data3:
