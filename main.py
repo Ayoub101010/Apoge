@@ -363,6 +363,42 @@ class MainApp(QWidget, ui):
         self.Show_All_Results_S1()
         self.Show_All_Results_S2()
         self.show_Inscriptions()
+        self.confirm_element()
+
+
+    def handle_selection_change(self):
+        
+        selected_items = self.table_widget.selectedItems()
+        if not selected_items:
+            return
+
+        row = selected_items[0].row()
+        column_count = self.table_widget.columnCount()
+        selected_data = []
+
+        for col in range(column_count):
+            item = self.table_widget.item(row, col)
+            selected_data.append(item.text())
+        
+        return selected_data
+
+
+    def confirm_element(self):
+        selected_item = self.handle_selection_change()
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password ='jenousJe@123' , db='apogee')
+        #La création de l'objet cursor pour interagir avec la bdd, pour exécuter des requêtes SQL
+        self.cur = self.db.cursor()
+
+        self.cur.execute('''
+            INSERT INTO etudiant(CNE, nometu, prenometu, CIN, Emailetu,adretu,telephoneetu,datenaisetu,semestre)
+            VALUES (%s , %s , %s , %s  , %s, %s, %s)
+        ''' ,( selected_item[0], selected_item[1] , selected_item[2]  , selected_item[3], selected_item[4], selected_item[5], selected_item[6],selected_item[7],selected_item[8] ))
+
+        self.cur.execute(f''' DELETE FROM inscription
+        WHERE CNE={selected_item[0]};''')
+
+        
+        
 
 
         
@@ -375,8 +411,8 @@ class MainApp(QWidget, ui):
         self.pushButton_5.clicked.connect(self.Laureats_de_Geoinformation)
         self.pushButton_6.clicked.connect(self. Add_First_semester)
         self.pushButton_7.clicked.connect(self.Add_Second_semester)
-
         self.pushButton_11.clicked.connect(self.Go_Back_LoginAdmin)
+        self.pushButton_16.clicked.connect(self.handle_selection_change)
 
         
         
