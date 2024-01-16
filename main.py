@@ -218,7 +218,7 @@ class  StudentLogin(QWidget, studentLogin):
         self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
         self.cur = self.db.cursor()
         
-        self.cur.execute(f"SELECT CN_DAO, Prog_MO, IG, GAA, Anglais, OAS FROM semestre1 WHERE CNE = '{CNE_f}'")
+        self.cur.execute(f"SELECT CN_DAO, Prog_MO, IG, GAA, Anglais, OAS FROM semestre2 WHERE CNE = '{CNE_f}'")
         semester_data2 = self.cur.fetchone()
 
         if semester_data2:
@@ -238,7 +238,7 @@ class  StudentLogin(QWidget, studentLogin):
         self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
         self.cur = self.db.cursor()
         
-        self.cur.execute(f"SELECT CN_DAO, Prog_MO, IG, GAA, Anglais, OAS FROM semestre1 WHERE CNE = '{CNE_f}'")
+        self.cur.execute(f"SELECT Topographie, BDS, CP, MAS, SIG, G_LS FROM semestre1 FROM semestre3 WHERE CNE = '{CNE_f}'")
         semester_data3 = self.cur.fetchone()
 
         if semester_data3:
@@ -257,7 +257,7 @@ class  StudentLogin(QWidget, studentLogin):
         self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
         self.cur = self.db.cursor()
         
-        self.cur.execute(f"SELECT CN_DAO, Prog_MO, IG, GAA, Anglais, OAS FROM semestre1 WHERE CNE = '{CNE_f}'")
+        self.cur.execute(f"SELECT TRL, TTI, PHOTOGRA,PROG_SIG, Anglais2, WBM FROM semestre4 WHERE CNE = '{CNE_f}'")
         semester_data4 = self.cur.fetchone()
 
         if semester_data4:
@@ -276,7 +276,7 @@ class  StudentLogin(QWidget, studentLogin):
         self.db = MySQLdb.connect(host='localhost', user='root', password='jenousJe@123', db='apogee')
         self.cur = self.db.cursor()
         
-        self.cur.execute(f"SELECT CN_DAO, Prog_MO, IG, GAA, Anglais, OAS FROM semestre1 WHERE CNE = '{CNE_f}'")
+        self.cur.execute(f"SELECT GES, GET, SIG_PD, GMP, GR, ADS FROM semestre5 WHERE CNE = '{CNE_f}'")
         semester_data5 = self.cur.fetchone()
 
         if semester_data5:
