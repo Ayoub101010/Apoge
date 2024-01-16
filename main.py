@@ -204,7 +204,7 @@ class  StudentLogin(QWidget, studentLogin):
 
             
                 # The semester data exists, update the labels
-            self.tabWidget.setCurrentIndex(0)
+            self.tabWidget.setCurrentIndex(1)
             self.label_94.setText(str(semester_data2[0]))
             self.label_97.setText(str(semester_data2[1]))
             self.label_99.setText(str(semester_data2[2]))
@@ -216,7 +216,7 @@ class  StudentLogin(QWidget, studentLogin):
 
 
                 # The semester data exists, update the labels
-            self.tabWidget.setCurrentIndex(0)
+            self.tabWidget.setCurrentIndex(2)
             self.label_108.setText(str(semester_data3[0]))
             self.label_111.setText(str(semester_data3[1]))
             self.label_112.setText(str(semester_data3[2]))
@@ -228,7 +228,7 @@ class  StudentLogin(QWidget, studentLogin):
 
 
 
-            self.tabWidget.setCurrentIndex(0)
+            self.tabWidget.setCurrentIndex(3)
             self.label_122.setText(str(semester_data4[0]))
             self.label_123.setText(str(semester_data4[1]))
             self.label_124.setText(str(semester_data4[2]))
@@ -241,7 +241,7 @@ class  StudentLogin(QWidget, studentLogin):
 
 
 
-            self.tabWidget.setCurrentIndex(0)
+            self.tabWidget.setCurrentIndex(4)
             self.label_136.setText(str(semester_data5[0]))
             self.label_139.setText(str(semester_data5[1]))
             self.label_140.setText(str(semester_data5[2]))
