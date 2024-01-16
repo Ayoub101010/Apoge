@@ -210,7 +210,7 @@ class  StudentLogin(QWidget, studentLogin):
          self.label_81.setText(str(semester_data1[3]))
          self.label_86.setText(str(semester_data1[4]))
          self.label_87.setText(str(semester_data1[5]))
-         moyenne = (semester_data1[0] + semester_data1[1] + semester_data1[2] + semester_data1[3]+ semester_data1[4] + semester_data1[5]) / 6 
+         moyenne = (float(semester_data1[0]) + float(semester_data1[1]) + float(semester_data1[2]) + float(semester_data1[3])+ float(semester_data1[4]) + float(semester_data1[5])) / 6 
          self.label_74.setText(str(moyenne))
 
     def s2(self, CNE_f) : 
@@ -249,7 +249,7 @@ class  StudentLogin(QWidget, studentLogin):
             self.label_113.setText(str(semester_data3[3]))
             self.label_114.setText(str(semester_data3[4]))
             self.label_115.setText(str(semester_data3[5]))
-            moyenne = (semester_data3[0] + semester_data3[1] + semester_data3[2] + semester_data3[3]+ semester_data3[4] + semester_data3[5]) / 6 
+            moyenne = (float(semester_data3[0]) + float(semester_data3[1]) + float(semester_data3[2]) + float(semester_data3[3])+ float(semester_data3[4]) + float(semester_data3[5])) / 6 
             self.label_110.setText(str(moyenne))
 
     def s4(self, CNE_f) : 
@@ -268,7 +268,7 @@ class  StudentLogin(QWidget, studentLogin):
             self.label_125.setText(str(semester_data4[3]))
             self.label_126.setText(str(semester_data4[4]))
             self.label_127.setText(str(semester_data4[5]))
-            moyenne = (semester_data4[0] + semester_data4[1] + semester_data4[2] + semester_data4[3]+ semester_data4[4] + semester_data4[5]) / 6 
+            moyenne = (float(semester_data4[0]) + float(semester_data4[1]) + float(semester_data4[2]) + float(semester_data4[3])+ float(semester_data4[4]) + float(semester_data4[5])) / 6 
             self.label_129.setText(str(moyenne))
 
     def s5(self, CNE_f) : 
@@ -287,7 +287,7 @@ class  StudentLogin(QWidget, studentLogin):
             self.label_141.setText(str(semester_data5[3]))
             self.label_142.setText(str(semester_data5[4]))
             self.label_143.setText(str(semester_data5[5]))
-            moyenne = (semester_data5[0] + semester_data5[1] + semester_data5[2] + semester_data5[3]+ semester_data5[4] + semester_data5[5]) / 6 
+            moyenne = (float(semester_data5[0]) + float(semester_data5[1]) + float(semester_data5[2]) + float(semester_data5[3])+ float(semester_data5[4]) + float(semester_data5[5])) / 6 
             self.label_138.setText(str(moyenne))
 
 
