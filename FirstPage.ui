@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>110</y>
+     <x>90</x>
+     <y>170</y>
      <width>411</width>
      <height>301</height>
     </rect>
@@ -48,8 +48,8 @@ background-color: rgb(170, 170, 127);</string>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>110</y>
+     <x>590</x>
+     <y>170</y>
      <width>411</width>
      <height>301</height>
     </rect>
@@ -77,6 +77,25 @@ background-color: rgb(170, 170, 127);</string>
      <width>120</width>
      <height>120</height>
     </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>60</y>
+     <width>771</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Système de gestion des étudiants de géoinformation</string>
    </property>
   </widget>
  </widget>
